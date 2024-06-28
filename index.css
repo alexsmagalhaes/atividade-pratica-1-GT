@@ -1,3 +1,138 @@
-*{
-   margin
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   outline: none;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+   background-color: blueviolet;
+   padding: 16px 120px;
+}
+
+header input {
+   width: 100%;
+   height: 40px;
+   padding: 0 10px;
+   border-radius: 8px;
+   font-size: 18px;
+}
+
+#tarefas {
+   padding: 60px 120px;
+   text-align: center;
+}
+
+#tarefas h2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 48px;
+   color: black;
+   margin-bottom: 40px;
+}
+
+#tarefas h2 button {
+   background-color: blueviolet;
+   height: 46px;
+   color: azure;
+   font-size: 12px;
+   font-weight: bold;
+   text-transform: uppercase;
+   padding: 0 26px;
+   letter-spacing: .75px;
+   border-radius: 5px;
+   cursor: pointer;
+   position: absolute;
+   right: 120px;
+}
+
+#tarefas h2 button:hover {
+   background-color: rgb(98, 16, 175);
+}
+
+#tarefas h6 {
+   text-align: center;
+   font-size: 24px;
+   color: #999;
+}
+
+#overlay {
+   width: 100%;
+   height: 100%;
+   background-color: #00000080;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
+
+.modal {
+   width: 400px;
+   background-color: white;
+   padding: 16px;
+   border-radius: 10px;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   z-index: 2;
+   transform: translate(-50%, -50%);
+}
+
+.modal h3 {
+   font-size: 24px;
+   color: #999;
+   margin-bottom: 26px;
+   text-align: center;
+}
+
+.modal label {
+   display: block;
+   font-size: 12px;
+   font-weight: bold;
+   letter-spacing: .75px;
+   text-transform: uppercase;
+   margin-bottom: 6px;
+}
+
+.modal input,
+.modal textarea {
+   width: 100%;
+   height: 46px;
+   border: 2px solid #DEDEDE;
+   border-radius: 5px;
+   margin-bottom: 16px;
+   padding-left: 10px;
+   transition-duration: 200ms;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+   border-color: blueviolet;
+}
+
+.modal textarea {
+   padding-top: 10px;
+   height: 120px;
+}
+
+.modal button {
+   background-color: blueviolet;
+   height: 46px;
+   width: 100%;
+   color: azure;
+   font-size: 12px;
+   font-weight: bold;
+   text-transform: uppercase;
+   padding: 0 26px;
+   letter-spacing: .75px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.modal button:hover {
+   background-color: rgb(98, 16, 175);
 }
