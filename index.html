@@ -11,30 +11,31 @@
 
 <body>
    <header>
-      <input type="text" name="" id="busca" placeholder="pesquisar por titulo">
+      <input type="text" id="busca" placeholder="pesquisar por titulo">
    </header>
-
    <main>
       <section id="tarefas">
-         <h2>Tarefas<button>nova tarefa</button></h2>
+         <h2>Tarefas<button id="abrirModal" onclick="abrirModal()">nova tarefa</button></h2>
+         <ul id="lista">
+         
+         </ul>
          <h6>nenhuma tarefa</h6>
       </section>
-
-      <section id="overlay"></section>
-
-      <div class="modal">
+      <section id="overlay" onclick="fecharModal()"></section>
+      <div class="modal" id="criarTarefa">
+         <box-icon name="x" size="md" onclick="fecharModal()"></box-icon>
          <h3>Criar tarefa</h3>
-         <form>
+         <form onsubmit="novaTarefa()">
             <label for="titulo">Título</label>
-            <input type="text" name="" id="titulo">
+            <input type="text" id="titulo" required>
             <label for="descricao">Descrição</label>
-            <textarea name="" id="descricao"></textarea>
-            <button>Criar</button>
+            <textarea id="descricao" required></textarea>
+            <button type="button" onclick="criar()">Criar</button>
          </form>
       </div>
    </main>
-
    <script src='index.js'></script>
+   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 
 </html>

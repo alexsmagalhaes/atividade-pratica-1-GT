@@ -1,3 +1,7 @@
+body {
+   background: #efefee;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -60,6 +64,33 @@ header input {
    color: #999;
 }
 
+#tarefas ul {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 16px;
+   margin-top: 36px;
+}
+
+#tarefas ul li {
+   width: calc(25%-12px);
+   padding: 16px;
+   background: white;
+   border-radius: 8px;
+   box-shadow: 0 5px 10px #000;
+}
+
+#tarefas ul li h5 {
+   font: size 16px;
+}
+
+#tarefas ul li .actions{
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 16px;
+   cursor: pointer;
+   fill:#999
+}
+
 #overlay {
    width: 100%;
    height: 100%;
@@ -68,6 +99,15 @@ header input {
    top: 0;
    left: 0;
    z-index: 1;
+   opacity: 0;
+   visibility: hidden;
+   transition: 200ms ease;
+}
+
+#overlay.active,
+.modal.active {
+   opacity: 1;
+   visibility: visible;
 }
 
 .modal {
@@ -80,6 +120,9 @@ header input {
    left: 50%;
    z-index: 2;
    transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: 200ms ease;
 }
 
 .modal h3 {
@@ -87,6 +130,19 @@ header input {
    color: #999;
    margin-bottom: 26px;
    text-align: center;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+box-icon {
+   background: #999;
+   cursor: pointer;
+   transition: 200ms ease;
+}
+
+box-icon:hover {
+   fill: blueviolet;
 }
 
 .modal label {
@@ -101,22 +157,25 @@ header input {
 .modal input,
 .modal textarea {
    width: 100%;
-   height: 46px;
-   border: 2px solid #DEDEDE;
+   border: 2px solid #dedede;
    border-radius: 5px;
    margin-bottom: 16px;
    padding-left: 10px;
    transition-duration: 200ms;
 }
 
-.modal input:focus,
-.modal textarea:focus {
-   border-color: blueviolet;
+.modal input {
+   height: 46px;
 }
 
 .modal textarea {
    padding-top: 10px;
    height: 120px;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+   border-color: blueviolet;
 }
 
 .modal button {
