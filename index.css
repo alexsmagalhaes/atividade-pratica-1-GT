@@ -72,23 +72,27 @@ header input {
 }
 
 #tarefas ul li {
-   width: calc(25%-12px);
+   width: calc(25% - 12px);
    padding: 16px;
    background: white;
    border-radius: 8px;
    box-shadow: 0 5px 10px #000;
 }
 
-#tarefas ul li h5 {
-   font: size 16px;
+.oculto {
+   display: none;
 }
 
-#tarefas ul li .actions{
+#tarefas ul li h5 {
+   font-size: 16px;
+}
+
+#tarefas ul li .actions {
    display: flex;
    justify-content: flex-end;
    margin-top: 16px;
    cursor: pointer;
-   fill:#999
+   fill: #999;
 }
 
 #overlay {
@@ -104,8 +108,7 @@ header input {
    transition: 200ms ease;
 }
 
-#overlay.active,
-.modal.active {
+.active {
    opacity: 1;
    visibility: visible;
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
    <meta charset='utf-8'>
    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,34 +7,30 @@
    <meta name='viewport' content='width=device-width, initial-scale=1'>
    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
 </head>
-
 <body>
    <header>
-      <input type="text" id="busca" placeholder="pesquisar por titulo">
+      <input type="text" id="busca" onchange="pesquisarTarefa()" placeholder="pesquisar por titulo">
    </header>
    <main>
       <section id="tarefas">
          <h2>Tarefas<button id="abrirModal" onclick="abrirModal()">nova tarefa</button></h2>
-         <ul id="lista">
-         
-         </ul>
+         <ul id="lista"></ul>
          <h6>nenhuma tarefa</h6>
       </section>
       <section id="overlay" onclick="fecharModal()"></section>
       <div class="modal" id="criarTarefa">
          <box-icon name="x" size="md" onclick="fecharModal()"></box-icon>
          <h3>Criar tarefa</h3>
-         <form onsubmit="novaTarefa()">
+         <form onsubmit="novaTarefa(event)">
             <label for="titulo">Título</label>
             <input type="text" id="titulo" required>
             <label for="descricao">Descrição</label>
             <textarea id="descricao" required></textarea>
-            <button type="button" onclick="criar()">Criar</button>
+            <button type="submit">Criar</button>
          </form>
       </div>
    </main>
+   <script async src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
    <script src='index.js'></script>
-   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
-
 </html>
